@@ -1,0 +1,5 @@
+test_job:
+  tags:
+    - default
+  script:
+    - echo "Ejecutando un trabajo en el runner"
