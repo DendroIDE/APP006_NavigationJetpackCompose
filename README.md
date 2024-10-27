@@ -44,7 +44,7 @@ This project is a demonstration of using **Safe Navigation Types** with **Jetpac
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/jetpack-compose-navigation-guide.git
+   git clone https://github.com/DendroIDE/APP006_NavigationJetpackCompose.git
    ```
 2. Open the project in Android Studio.
 3. Sync the project with Gradle files to download the required dependencies.
@@ -131,7 +131,7 @@ Este proyecto es una demostración del uso de **tipos seguros de navegación** c
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/jetpack-compose-navigation-guide.git
+   git clone https://github.com/DendroIDE/APP006_NavigationJetpackCompose.git
    ```
 2. Abre el proyecto en Android Studio.
 3. Sincroniza el proyecto con los archivos de Gradle para descargar las dependencias necesarias.
