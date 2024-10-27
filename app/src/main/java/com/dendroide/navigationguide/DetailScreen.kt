@@ -15,15 +15,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 import com.dendroide.navigationguide.core.navigation.Detail
+import com.dendroide.navigationguide.core.navigation.Settings
+import com.dendroide.navigationguide.core.navigation.SettingsInfo
 
 @Composable
-fun DetailScreen(name: String, navigateBack: () ->  Unit){
+fun DetailScreen(name: String, navigateToSettings:(SettingsInfo) -> Unit, navigateBack: () ->  Unit){
     Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.weight(1f))
         Text(text = "DETAIL SCREEN $name", fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f))
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = {  }) {
+        Button(onClick = {
+            val settingsInfo = SettingsInfo(
+                name = "DendroIDE Code",
+                id = 1,
+                darkMode = true,
+                subscribe = false
+            )
+            navigateToSettings(settingsInfo)
+        }) {
             Text(text = "Navegar a ajustes")
         }
         Spacer(modifier = Modifier.weight(1f))

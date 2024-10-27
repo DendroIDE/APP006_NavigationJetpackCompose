@@ -4,5 +4,5 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android) apply false
     // Existing plugins
     alias(libs.plugins.compose.compiler) apply false
-    
+    alias(libs.plugins.kotlin.parcelize) apply false
 }
