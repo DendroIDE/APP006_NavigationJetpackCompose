@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navDeepLink
 import androidx.navigation.toRoute
 import com.dendroide.navigationguide.DetailScreen
 import com.dendroide.navigationguide.HomeScreen
@@ -24,15 +25,16 @@ fun NavigationWrapper() {
             }
         }
 
-        composable<Home> {
+        composable<Home>(deepLinks = listOf(navDeepLink { uriPattern= "https://dendroide.code/home" })) {
             HomeScreen{
                name -> navController.navigate(Detail(name = name))
             }
         }
 
-        composable<Detail> { backStackEntry ->
-            val detail = backStackEntry.toRoute<Detail>()
-            DetailScreen(detail.name, navigateBack = { navController.navigateUp() }, navigateToSettings = { navController.navigate(Settings(it)) })
+        composable<Detail>(deepLinks = listOf(navDeepLink { uriPattern = "https://dendroide.code/detail/{name}" })) { backStackEntry ->
+            //val detail = backStackEntry.toRoute<Detail>()
+            val name = backStackEntry.arguments?.getString("name").orEmpty()
+            DetailScreen(name, navigateBack = { navController.navigateUp() }, navigateToSettings = { navController.navigate(Settings(it)) })
         }
 
 
